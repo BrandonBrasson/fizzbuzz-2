@@ -33,4 +33,13 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  %w[core expectations mocks].each do |name|
+      if RSpec::Version::STRING =~ /[a-zA-Z]+/
+        s.add_runtime_dependency "rspec-#{name}", "= #{RSpec::Version::STRING}"
+      else
+        s.add_runtime_dependency "rspec-#{name}", "~> #{RSpec::Version::STRING.split('.')[0..1].concat(['0']).join('.')}"
+      end
+    end
+  end
 end
