@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+
+a = gets.chomp.to_i
+
+puts "#{a}"
+
+puts "#{a.class}"
+
+a = gets.chomp.to_i
+
+b = gets.chomp.to_i
+
+puts "You have entered #{fizz} and #{buzz} and their sum is #{a+b}"
