@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
-#hash
 
-  def fizzBuzzHash num
+require "rspec"
+
+
+  def fizzBuzzHash(num)
    hash = Hash.new
 
 1.upto(num).each do |e|
@@ -18,12 +20,12 @@
  hash
 end
 
-describe 'FizzBuzzHash' do
+ describe'FizzBuzzHash' do
   it 'Returns FizzBuzz in a hash' do
     final_hash = {
       1=>1, 2=>2, 3=>"Fizz", 4=>4, 5=>"Buzz", 6=>"Fizz", 7=>7, 8=>8, 9=>'Fizz', 10=>"Buzz", 11=>11,
       12=>"Fizz", 13=>13, 14=>14, 15=>"FizzBuzz", 16=>16
     }
-    expect(fizzBuzzHash(16)).to eq(final_hash)
+    expect(fizzBuzzHash(23)).to eq(final_hash)
   end
 end
